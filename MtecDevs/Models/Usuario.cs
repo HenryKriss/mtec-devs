@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace MtecDevs.Models;
 
@@ -7,8 +8,14 @@ namespace MtecDevs.Models;
     public class Usuario
     {
 
+
+        [Key]   
+        public string UserId {get; set; }
+        [ForeignKey("UserId")]
+        public IdentityUser AccountUser {get; set; }
+
         [Required(ErrorMessage = "Informe o Nome")]
-        [StringLenght(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
+        [StringLength(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
         public string Nome { get; set; }
         
         [DataType(DataType.Date)]
@@ -16,10 +23,10 @@ namespace MtecDevs.Models;
         [Required(ErrorMessage = "Informe a Data de Nascimento")]
         public DateTime DataNascimento {get; set;}
 
-        [StringLenght(300)]
+        [StringLength(300)]
         public string Foto {get; set;}
 
-        [Display(nameof = "Tipo de Desenvolvidor")]
+        [Display(Name = "Tipo de Desenvolvidor")]
         [Required(ErrorMessage = "Informe o Tipo de Desenvolvidor")]
         public byte TipoDevId {get; set;}
 

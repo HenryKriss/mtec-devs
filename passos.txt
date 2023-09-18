@@ -17,9 +17,26 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.21
 dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.2
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6.0.21
 
-Dados
+/* Dados *\
 
 Usuários - Devs/Admin/Professor
     Dados básicos: Nome, Data nascimento, Foto, TipoDev
 TipoDev - Front/Back/Full/UX-UI/Design
 
+/*Salvando no GitHub*\
+
+git add . 
+git commit -m ""
+git push
+
+Criou a classe de Contexto
+Criou a ConnectionString
+Adicionou os serviços de DbContext e Identity ao program
+
+Criar a migração
+dotnet ef
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add criar-banco
+
+dotnet ef database update

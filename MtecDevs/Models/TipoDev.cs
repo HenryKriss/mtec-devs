@@ -11,7 +11,7 @@ namespace MtecDevs.Models;
         public byte Id { get; set; }
 
         [Required(ErrorMessage = "Informe o Nome")]
-        [StringLenght(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
+        [StringLength(30, ErrorMessage = "O Nome deve possuir no máximo 30 caracteres")]
         public string Nome { get; set; }
 
     }
