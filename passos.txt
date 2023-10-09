@@ -40,3 +40,4 @@ dotnet tool install --global dotnet-ef
 dotnet ef migrations add criar-banco
 
 dotnet ef database update
+
